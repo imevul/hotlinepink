@@ -4,6 +4,19 @@
     "revision": 1,
     "license": "SPDX-License-Identifier: MIT"
   },
+  "custom-styles": {
+    "Markdown": {
+      "Header H1": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Header H2": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Header H3": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Header H4": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Header H5": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Header H6": { "text-color": "#FF1493", "selected-text-color": "#FFF4FA", "bold": true },
+      "Inline Image": { "text-color": "#FF5CB8", "selected-text-color": "#FFF4FA" },
+      "Reference Image": { "text-color": "#FF5CB8", "selected-text-color": "#FFF4FA" },
+      "Inline Image: Link": { "text-color": "#FF5CB8", "selected-text-color": "#FFF4FA" }
+    }
+  },
   "editor-colors": {
     "BackgroundColor": "#09090B",
     "BracketMatching": "#49313E",

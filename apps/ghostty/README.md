@@ -12,12 +12,26 @@ Colour theme for Ghostty.
 |---|---|
 | `hotline-pink` | `~/.config/ghostty/themes/hotline-pink` |
 
-## Activate
+## Switch it on
 
-Add `theme = hotline-pink` to your Ghostty config, then reload it.
+Your turn: the installer never edits your own configs.
 
-## Notes
+1. Open your Ghostty config: `~/.config/ghostty/config.ghostty`, or `~/.config/ghostty/config` on older setups.
+2. Delete any `background`, `foreground`, `cursor-color`, `cursor-text`, `selection-background`, `selection-foreground` and `palette` lines, and any existing `theme` line. They override the theme.
+3. Add this line:
 
-Colour settings in your own config override the theme. Remove any `background`, `foreground`, `cursor-color`, `cursor-text`, `selection-*` and `palette` lines, or the theme will appear to do nothing.
+   ```ini
+   theme = hotline-pink
+   ```
+
+4. Reload Ghostty's config, or restart it.
+
+## Uninstall
+
+```bash
+./install.py --uninstall ghostty
+```
+
+1. Remove `theme = hotline-pink` from your Ghostty config, and put back any colour lines you deleted.
 
 Status: Loaded in the app.

@@ -12,8 +12,23 @@ Colour scheme for micro.
 |---|---|
 | `hotline-pink.micro` | `~/.config/micro/colorschemes/hotline-pink.micro` |
 
-## Activate
+## Switch it on
 
-In micro, press Ctrl+E and run `set colorscheme hotline-pink`.
+Your turn: the installer never edits your own configs.
+
+1. In micro, press Ctrl+E and run:
+
+   ```
+   set colorscheme hotline-pink
+   ```
+
+
+## Uninstall
+
+```bash
+./install.py --uninstall micro
+```
+
+1. In micro, press Ctrl+E and run `set colorscheme default`.
 
 Status: Syntax checked only.

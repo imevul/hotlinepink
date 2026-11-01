@@ -13,17 +13,33 @@ Syntax colours for fish, and colours for the Tide prompt.
 | `Hotline Pink.theme` | `~/.config/fish/themes/Hotline Pink.theme` |
 | `tide-colors.fish` | `~/.config/fish/hotline-pink-tide-colors.fish` |
 
-## Activate
+## Switch it on
 
-```fish
-fish_config theme choose "Hotline Pink"
-fish ~/.config/fish/hotline-pink-tide-colors.fish
+Your turn: the installer never edits your own configs.
+
+1. Add this line to `~/.config/fish/config.fish`, then open a new fish session:
+
+   ```fish
+   fish_config theme choose "Hotline Pink"
+   ```
+
+2. If you use Tide, run this once to apply its colours:
+
+   ```bash
+   fish ~/.config/fish/hotline-pink-tide-colors.fish
+   ```
+
+
+## Uninstall
+
+```bash
+./install.py --uninstall fish
 ```
 
-Skip the second line if you don't use Tide. `theme choose` only lasts for the current session, so add that line to `config.fish` to keep the theme.
+1. Remove the `fish_config theme choose` line from `config.fish`.
 
 ## Notes
 
 The installer saves your current Tide colours first. `./install.py --uninstall fish` restores any colour still set to its Hotline Pink value, and leaves colours you changed since then alone.
 
-Status: Syntax checked only.
+Status: Loaded in the app.

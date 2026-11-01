@@ -12,14 +12,24 @@ Plasma colour scheme for apps and window decorations.
 |---|---|
 | `HotlinePink.colors` | `~/.local/share/color-schemes/HotlinePink.colors` |
 
-## Activate
+## Switch it on
+
+Your turn: the installer never edits your own configs.
+
+1. If you use kde-material-you-colors, stop it first, because it replaces the active colour scheme.
+2. Apply the scheme:
+
+   ```bash
+   plasma-apply-colorscheme HotlinePink
+   ```
+
+
+## Uninstall
 
 ```bash
-plasma-apply-colorscheme HotlinePink
+./install.py --uninstall kde-plasma
 ```
 
-## Notes
-
-kde-material-you-colors replaces the active colour scheme while it runs, so stop it first if you use it.
+1. Select another scheme in System Settings > Colors & Themes > Colors. Do this before uninstalling if you can.
 
 Status: Syntax checked only.

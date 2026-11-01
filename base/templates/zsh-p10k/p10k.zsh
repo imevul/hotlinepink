@@ -42,7 +42,7 @@
   typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # >>> hotline pink colours
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND='{{highlight}}'
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='{{primary}}'
   typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='{{muted}}'
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='{{primary}}'
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true

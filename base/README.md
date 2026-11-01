@@ -21,8 +21,8 @@ Hotline Pink is dark only. The neon is an accent, not the wallpaper.
 | `bg` | `#09090B` | Main background |
 | `surface` | `#121214` | Panels and sidebars |
 | `raised` | `#1C191C` | The one panel that should draw the eye, plus hover and active rows |
-| `primary` | `#FF1493` | Small, sharp accents: keywords, active markers, the main button |
-| `highlight` | `#FF5CB8` | Links, functions, button hover |
+| `primary` | `#FF1493` | Sharp accents: keywords, directories and paths, headings, active markers, the main button |
+| `highlight` | `#FF5CB8` | Links, functions, image links, button hover |
 | `magenta` | `#FF00A8` | Background glow only, never text |
 | `deep` | `#C6006F` | Gradient ends and fills, never text on `bg` |
 | `cyan` | `#2DE2E6` | Focus rings and tiny highlights |

@@ -17,9 +17,20 @@ Colour theme extension for VS Code, Code - OSS and Cursor.
 | `hotline-pink/themes/hotline-pink-color-theme.json` | `~/.vscode-oss/extensions/imevul.hotline-pink-1.0.0/themes/hotline-pink-color-theme.json` |
 | `hotline-pink/themes/hotline-pink-color-theme.json` | `~/.cursor/extensions/imevul.hotline-pink-1.0.0/themes/hotline-pink-color-theme.json` |
 
-## Activate
+## Switch it on
 
-Restart the editor, then choose Preferences: Color Theme > Hotline Pink.
+Your turn: the installer never edits your own configs.
+
+1. Restart the editor.
+2. Open the command palette, run Preferences: Color Theme, and select Hotline Pink.
+
+## Uninstall
+
+```bash
+./install.py --uninstall vscode
+```
+
+1. Select another colour theme in the editor, then restart it.
 
 ## Notes
 

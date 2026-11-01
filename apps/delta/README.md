@@ -12,18 +12,30 @@ Diff colours for delta.
 |---|---|
 | `hotline-pink.gitconfig` | `~/.config/delta/hotline-pink.gitconfig` |
 
-## Activate
+## Switch it on
+
+Your turn: the installer never edits your own configs.
+
+1. Install the bat theme too, if you haven't, because delta takes its syntax colours from it:
+
+   ```bash
+   ./install.py bat
+   ```
+
+2. Point git at the theme:
+
+   ```bash
+   git config --global --add include.path ~/.config/delta/hotline-pink.gitconfig
+   git config --global delta.features hotline-pink
+   ```
+
+
+## Uninstall
 
 ```bash
-git config --global include.path ~/.config/delta/hotline-pink.gitconfig
+./install.py --uninstall delta
 ```
 
-```bash
-git config --global delta.features hotline-pink
-```
-
-## Notes
-
-Install the bat theme first, because `syntax-theme` points to it.
+1. Run `git config --global --unset include.path '.*hotline-pink.*'` and `git config --global --unset delta.features`.
 
 Status: Syntax checked only.

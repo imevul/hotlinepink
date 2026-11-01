@@ -12,8 +12,23 @@ Theme for superfile.
 |---|---|
 | `hotline-pink.toml` | `~/.config/superfile/theme/hotline-pink.toml` |
 
-## Activate
+## Switch it on
 
-Set `theme = "hotline-pink"` in `~/.config/superfile/config.toml`.
+Your turn: the installer never edits your own configs.
+
+1. In `~/.config/superfile/config.toml`, change the `theme` line to:
+
+   ```toml
+   theme = "hotline-pink"
+   ```
+
+
+## Uninstall
+
+```bash
+./install.py --uninstall superfile
+```
+
+1. In `~/.config/superfile/config.toml`, set `theme` back to your previous theme.
 
 Status: Syntax checked only.

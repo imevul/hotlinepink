@@ -1,7 +1,7 @@
 # Hotline Pink for eza
 filekinds:
   normal: {foreground: "#FFF4FA"}
-  directory: {foreground: "#FF5CB8", is_bold: true}
+  directory: {foreground: "#FF1493", is_bold: true}
   symlink: {foreground: "#2DE2E6"}
   pipe: {foreground: "#F59E0B"}
   block_device: {foreground: "#F59E0B"}

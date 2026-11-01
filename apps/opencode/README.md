@@ -12,8 +12,23 @@ TUI theme for opencode.
 |---|---|
 | `hotline-pink.json` | `~/.config/opencode/themes/hotline-pink.json` |
 
-## Activate
+## Switch it on
 
-Add `"theme": "hotline-pink"` to `tui.json` or `tui.jsonc`, or pick it with `/theme`.
+Your turn: the installer never edits your own configs.
+
+1. Add this key to `~/.config/opencode/tui.jsonc` or `tui.json`:
+
+   ```json
+   "theme": "hotline-pink"
+   ```
+
+
+## Uninstall
+
+```bash
+./install.py --uninstall opencode
+```
+
+1. Remove the `theme` key from `tui.jsonc` or `tui.json`.
 
 Status: Syntax checked only.

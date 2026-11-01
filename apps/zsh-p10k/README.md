@@ -12,9 +12,15 @@ A small lean Powerlevel10k prompt in Hotline Pink colours.
 |---|---|
 | `p10k.zsh` | `~/.p10k.zsh` |
 
-## Activate
+## Switch it on
 
-Open a new shell. Your `.zshrc` needs to source `~/.p10k.zsh`, as the Powerlevel10k setup does by default.
+Nothing more to do. Open a new zsh session to see it. This assumes your `.zshrc` loads `~/.p10k.zsh`, which is the Powerlevel10k default.
+
+## Uninstall
+
+```bash
+./install.py --uninstall zsh-p10k
+```
 
 ## Notes
 

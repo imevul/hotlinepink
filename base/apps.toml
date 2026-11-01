@@ -1,6 +1,13 @@
-# One table per app. status is "loaded" (opened in the real app) or "syntax"
-# (parsed or validated only). Destinations with only_if only install when that
-# path exists.
+# One table per app.
+#
+# status: "loaded" (opened in the real app) or "syntax" (parsed or validated only).
+# manual: the installer copies nothing, the user follows the steps.
+# files:  dest paths with a matching only_if entry install only when that path exists.
+# active: set when installing is enough. Otherwise steps lists what the user must do.
+# steps:  { do = text, code = optional text to copy, lang = optional fence language }.
+#         {file:name} is this app's generated file: a full path in the installer
+#         output and the bare name in the app's README.
+# undo:   what the user reverts by hand after uninstalling.
 
 [ghostty]
 name = "Ghostty"
@@ -8,10 +15,13 @@ group = "Terminals"
 summary = "Colour theme for Ghostty."
 status = "loaded"
 files = [{ src = "hotline-pink", dest = ["~/.config/ghostty/themes/hotline-pink"] }]
-activate = "Add `theme = hotline-pink` to your Ghostty config, then reload it."
-notes = """
-Colour settings in your own config override the theme. Remove any `background`, `foreground`, `cursor-color`, `cursor-text`, `selection-*` and `palette` lines, or the theme will appear to do nothing.
-"""
+steps = [
+  { do = "Open your Ghostty config: `~/.config/ghostty/config.ghostty`, or `~/.config/ghostty/config` on older setups." },
+  { do = "Delete any `background`, `foreground`, `cursor-color`, `cursor-text`, `selection-background`, `selection-foreground` and `palette` lines, and any existing `theme` line. They override the theme." },
+  { do = "Add this line:", code = "theme = hotline-pink", lang = "ini" },
+  { do = "Reload Ghostty's config, or restart it." },
+]
+undo = ["Remove `theme = hotline-pink` from your Ghostty config, and put back any colour lines you deleted."]
 
 [konsole]
 name = "Konsole"
@@ -19,7 +29,11 @@ group = "Terminals"
 summary = "Colour scheme for Konsole."
 status = "loaded"
 files = [{ src = "HotlinePink.colorscheme", dest = ["~/.local/share/konsole/HotlinePink.colorscheme"] }]
-activate = "Settings > Edit Current Profile > Appearance, then pick Hotline Pink."
+steps = [
+  { do = "In Konsole, open Settings > Edit Current Profile > Appearance." },
+  { do = "Select Hotline Pink, then click OK." },
+]
+undo = ["In Konsole, pick another colour scheme under Settings > Edit Current Profile > Appearance."]
 notes = "Konsole colour schemes can't set a cursor colour, so the cursor follows the text colour unless you set a custom one in the profile."
 
 [alacritty]
@@ -28,14 +42,10 @@ group = "Terminals"
 summary = "Colour theme for Alacritty."
 status = "syntax"
 files = [{ src = "hotline-pink.toml", dest = ["~/.config/alacritty/themes/hotline-pink.toml"] }]
-activate = """
-Add this to `alacritty.toml`:
-
-```toml
-[general]
-import = ["~/.config/alacritty/themes/hotline-pink.toml"]
-```
-"""
+steps = [
+  { do = "Add this to `~/.config/alacritty/alacritty.toml`. If you already have a `[general]` section, add the `import` line to it:", code = "[general]\nimport = [\"~/.config/alacritty/themes/hotline-pink.toml\"]", lang = "toml" },
+]
+undo = ["Remove the `hotline-pink.toml` import from `alacritty.toml`."]
 
 [windows-terminal]
 name = "Microsoft Terminal"
@@ -44,9 +54,12 @@ summary = "Colour scheme for Windows Terminal."
 status = "syntax"
 manual = true
 files = [{ src = "hotline-pink.json", dest = [] }]
-activate = """
-Open Settings > Open JSON file and add the contents of `hotline-pink.json` to the `schemes` array. Then set `"colorScheme": "Hotline Pink"` under `profiles.defaults`.
-"""
+steps = [
+  { do = "On Windows, open Terminal's Settings, then Open JSON file." },
+  { do = "Add the contents of `{file:hotline-pink.json}` as a new entry in the `schemes` array." },
+  { do = "Add this under `profiles.defaults`:", code = "\"colorScheme\": \"Hotline Pink\"", lang = "json" },
+]
+undo = ["Remove the Hotline Pink entry from `schemes` and the `colorScheme` line from `profiles.defaults`."]
 
 [zsh-p10k]
 name = "zsh + Powerlevel10k"
@@ -54,7 +67,7 @@ group = "Shells"
 summary = "A small lean Powerlevel10k prompt in Hotline Pink colours."
 status = "loaded"
 files = [{ src = "p10k.zsh", dest = ["~/.p10k.zsh"] }]
-activate = "Open a new shell. Your `.zshrc` needs to source `~/.p10k.zsh`, as the Powerlevel10k setup does by default."
+active = "Open a new zsh session to see it. This assumes your `.zshrc` loads `~/.p10k.zsh`, which is the Powerlevel10k default."
 notes = """
 Installing replaces `~/.p10k.zsh`, after backing up any existing file. To keep your own prompt layout, skip the installer and copy the block between the `hotline pink colours` markers to the end of the main function in your config.
 
@@ -65,22 +78,17 @@ Needs a Nerd Font. JetBrains Mono Nerd Font is the recommended choice.
 name = "fish + Tide"
 group = "Shells"
 summary = "Syntax colours for fish, and colours for the Tide prompt."
-status = "syntax"
+status = "loaded"
 files = [
   { src = "Hotline Pink.theme", dest = ["~/.config/fish/themes/Hotline Pink.theme"] },
   { src = "tide-colors.fish", dest = ["~/.config/fish/hotline-pink-tide-colors.fish"] },
 ]
-activate = """
-```fish
-fish_config theme choose "Hotline Pink"
-fish ~/.config/fish/hotline-pink-tide-colors.fish
-```
-
-Skip the second line if you don't use Tide. `theme choose` only lasts for the current session, so add that line to `config.fish` to keep the theme.
-"""
-notes = """
-The installer saves your current Tide colours first. `./install.py --uninstall fish` restores any colour still set to its Hotline Pink value, and leaves colours you changed since then alone.
-"""
+steps = [
+  { do = "Add this line to `~/.config/fish/config.fish`, then open a new fish session:", code = "fish_config theme choose \"Hotline Pink\"", lang = "fish" },
+  { do = "If you use Tide, run this once to apply its colours:", code = "fish ~/.config/fish/hotline-pink-tide-colors.fish", lang = "bash" },
+]
+undo = ["Remove the `fish_config theme choose` line from `config.fish`."]
+notes = "The installer saves your current Tide colours first. `./install.py --uninstall fish` restores any colour still set to its Hotline Pink value, and leaves colours you changed since then alone."
 
 [btop]
 name = "btop"
@@ -88,7 +96,11 @@ group = "TUI tools"
 summary = "Theme for btop."
 status = "syntax"
 files = [{ src = "hotline-pink.theme", dest = ["~/.config/btop/themes/hotline-pink.theme"] }]
-activate = "Press Esc in btop, open Options, and set Color theme to hotline-pink."
+steps = [
+  { do = "In btop, press Esc and open Options." },
+  { do = "Set Color theme to hotline-pink." },
+]
+undo = ["In btop's Options, set Color theme to another theme."]
 
 [bat]
 name = "bat"
@@ -96,13 +108,11 @@ group = "TUI tools"
 summary = "Syntax theme for bat. delta uses it too."
 status = "loaded"
 files = [{ src = "hotline-pink.tmTheme", dest = ["~/.config/bat/themes/hotline-pink.tmTheme"] }]
-activate = """
-```bash
-bat cache --build
-```
-
-Then add `--theme="hotline-pink"` to `~/.config/bat/config`.
-"""
+steps = [
+  { do = "Rebuild bat's theme cache:", code = "bat cache --build", lang = "bash" },
+  { do = "Add this line to `~/.config/bat/config`:", code = "--theme=\"hotline-pink\"" },
+]
+undo = ["Remove `--theme=\"hotline-pink\"` from `~/.config/bat/config`, then run `bat cache --build`."]
 
 [delta]
 name = "delta"
@@ -110,16 +120,11 @@ group = "TUI tools"
 summary = "Diff colours for delta."
 status = "syntax"
 files = [{ src = "hotline-pink.gitconfig", dest = ["~/.config/delta/hotline-pink.gitconfig"] }]
-activate = """
-```bash
-git config --global include.path ~/.config/delta/hotline-pink.gitconfig
-```
-
-```bash
-git config --global delta.features hotline-pink
-```
-"""
-notes = "Install the bat theme first, because `syntax-theme` points to it."
+steps = [
+  { do = "Install the bat theme too, if you haven't, because delta takes its syntax colours from it:", code = "./install.py bat", lang = "bash" },
+  { do = "Point git at the theme:", code = "git config --global --add include.path ~/.config/delta/hotline-pink.gitconfig\ngit config --global delta.features hotline-pink", lang = "bash" },
+]
+undo = ["Run `git config --global --unset include.path '.*hotline-pink.*'` and `git config --global --unset delta.features`."]
 
 [fzf]
 name = "fzf"
@@ -130,7 +135,11 @@ files = [
   { src = "hotline-pink.fish", dest = ["~/.config/fzf/hotline-pink.fish"] },
   { src = "hotline-pink.zsh", dest = ["~/.config/fzf/hotline-pink.zsh"] },
 ]
-activate = "Source `~/.config/fzf/hotline-pink.fish` from `config.fish`, or `~/.config/fzf/hotline-pink.zsh` from `.zshrc`."
+steps = [
+  { do = "For fish, add this line to `~/.config/fish/config.fish`:", code = "source ~/.config/fzf/hotline-pink.fish", lang = "fish" },
+  { do = "For zsh, add this line to `~/.zshrc`:", code = "source ~/.config/fzf/hotline-pink.zsh", lang = "zsh" },
+]
+undo = ["Remove the `source` line from `config.fish` or `.zshrc`, or your shell will warn that the file is missing."]
 
 [eza]
 name = "eza"
@@ -138,7 +147,7 @@ group = "TUI tools"
 summary = "Theme for eza."
 status = "loaded"
 files = [{ src = "theme.yml", dest = ["~/.config/eza/theme.yml"] }]
-activate = "Nothing to do, eza reads this file automatically. An `LS_COLORS` or `EZA_COLORS` variable can still override it."
+active = "eza reads this file automatically. An `LS_COLORS` or `EZA_COLORS` variable can still override it."
 
 [micro]
 name = "micro"
@@ -146,7 +155,10 @@ group = "TUI tools"
 summary = "Colour scheme for micro."
 status = "syntax"
 files = [{ src = "hotline-pink.micro", dest = ["~/.config/micro/colorschemes/hotline-pink.micro"] }]
-activate = "In micro, press Ctrl+E and run `set colorscheme hotline-pink`."
+steps = [
+  { do = "In micro, press Ctrl+E and run:", code = "set colorscheme hotline-pink" },
+]
+undo = ["In micro, press Ctrl+E and run `set colorscheme default`."]
 
 [superfile]
 name = "superfile"
@@ -154,7 +166,10 @@ group = "TUI tools"
 summary = "Theme for superfile."
 status = "syntax"
 files = [{ src = "hotline-pink.toml", dest = ["~/.config/superfile/theme/hotline-pink.toml"] }]
-activate = "Set `theme = \"hotline-pink\"` in `~/.config/superfile/config.toml`."
+steps = [
+  { do = "In `~/.config/superfile/config.toml`, change the `theme` line to:", code = "theme = \"hotline-pink\"", lang = "toml" },
+]
+undo = ["In `~/.config/superfile/config.toml`, set `theme` back to your previous theme."]
 
 [vscode]
 name = "VS Code / Cursor"
@@ -165,7 +180,11 @@ files = [
   { src = "hotline-pink/package.json", dest = ["~/.vscode/extensions/imevul.hotline-pink-1.0.0/package.json", "~/.vscode-oss/extensions/imevul.hotline-pink-1.0.0/package.json", "~/.cursor/extensions/imevul.hotline-pink-1.0.0/package.json"], only_if = ["~/.vscode", "~/.vscode-oss", "~/.cursor"] },
   { src = "hotline-pink/themes/hotline-pink-color-theme.json", dest = ["~/.vscode/extensions/imevul.hotline-pink-1.0.0/themes/hotline-pink-color-theme.json", "~/.vscode-oss/extensions/imevul.hotline-pink-1.0.0/themes/hotline-pink-color-theme.json", "~/.cursor/extensions/imevul.hotline-pink-1.0.0/themes/hotline-pink-color-theme.json"], only_if = ["~/.vscode", "~/.vscode-oss", "~/.cursor"] },
 ]
-activate = "Restart the editor, then choose Preferences: Color Theme > Hotline Pink."
+steps = [
+  { do = "Restart the editor." },
+  { do = "Open the command palette, run Preferences: Color Theme, and select Hotline Pink." },
+]
+undo = ["Select another colour theme in the editor, then restart it."]
 notes = "Opened in Code - OSS. Cursor uses the same extension format but hasn't been opened with it yet."
 
 [kate]
@@ -174,7 +193,11 @@ group = "Editors"
 summary = "Syntax highlighting theme for Kate and other KDE text editors."
 status = "loaded"
 files = [{ src = "hotline-pink.theme", dest = ["~/.local/share/org.kde.syntax-highlighting/themes/hotline-pink.theme"] }]
-activate = "Restart Kate, then pick Hotline Pink under Settings > Configure Kate > Color Themes."
+steps = [
+  { do = "Restart Kate." },
+  { do = "Open Settings > Configure Kate > Color Themes and select Hotline Pink." },
+]
+undo = ["In Kate, select another theme under Settings > Configure Kate > Color Themes."]
 
 [jetbrains]
 name = "JetBrains IDEs"
@@ -183,7 +206,11 @@ summary = "Editor colour scheme for JetBrains IDEs. It covers the editor only, n
 status = "syntax"
 manual = true
 files = [{ src = "HotlinePink.icls", dest = [] }]
-activate = "Settings > Editor > Color Scheme, then the gear icon > Import Scheme, and choose `HotlinePink.icls`."
+steps = [
+  { do = "In the IDE, open Settings > Editor > Color Scheme." },
+  { do = "Click the gear icon, choose Import Scheme, and select `{file:HotlinePink.icls}`." },
+]
+undo = ["Select another scheme under Settings > Editor > Color Scheme."]
 
 [kde-plasma]
 name = "KDE Plasma"
@@ -191,8 +218,11 @@ group = "Desktop"
 summary = "Plasma colour scheme for apps and window decorations."
 status = "syntax"
 files = [{ src = "HotlinePink.colors", dest = ["~/.local/share/color-schemes/HotlinePink.colors"] }]
-activate = "```bash\nplasma-apply-colorscheme HotlinePink\n```"
-notes = "kde-material-you-colors replaces the active colour scheme while it runs, so stop it first if you use it."
+steps = [
+  { do = "If you use kde-material-you-colors, stop it first, because it replaces the active colour scheme." },
+  { do = "Apply the scheme:", code = "plasma-apply-colorscheme HotlinePink", lang = "bash" },
+]
+undo = ["Select another scheme in System Settings > Colors & Themes > Colors. Do this before uninstalling if you can."]
 
 [opencode]
 name = "opencode"
@@ -200,7 +230,10 @@ group = "Agent tools"
 summary = "TUI theme for opencode."
 status = "syntax"
 files = [{ src = "hotline-pink.json", dest = ["~/.config/opencode/themes/hotline-pink.json"] }]
-activate = "Add `\"theme\": \"hotline-pink\"` to `tui.json` or `tui.jsonc`, or pick it with `/theme`."
+steps = [
+  { do = "Add this key to `~/.config/opencode/tui.jsonc` or `tui.json`:", code = "\"theme\": \"hotline-pink\"", lang = "json" },
+]
+undo = ["Remove the `theme` key from `tui.jsonc` or `tui.json`."]
 
 [herdr]
 name = "herdr"
@@ -209,10 +242,11 @@ summary = "Colour overrides for herdr's UI."
 status = "syntax"
 manual = true
 files = [{ src = "theme.toml", dest = [] }]
-activate = """
-herdr keeps theme colours in its main config, so this one is a paste. Replace the `[theme]` table in `~/.config/herdr/config.toml` with `theme.toml`, then run:
-
-```bash
-herdr server reload-config
-```
-"""
+steps = [
+  { do = "Open `~/.config/herdr/config.toml`." },
+  { do = "Delete your existing `[theme]` section, along with any `[theme.custom]` section." },
+  { do = "Paste the whole of `{file:theme.toml}` in its place." },
+  { do = "Reload the config:", code = "herdr server reload-config", lang = "bash" },
+]
+undo = ["Replace the `[theme]` and `[theme.custom]` sections in `~/.config/herdr/config.toml` with your previous theme, then run `herdr server reload-config`."]
+notes = "herdr has no way to add a named theme, so its colours live in its main config. `name` stays `tokyo-night` as the base, and `[theme.custom]` overrides the colours on top of it."

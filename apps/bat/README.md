@@ -12,12 +12,29 @@ Syntax theme for bat. delta uses it too.
 |---|---|
 | `hotline-pink.tmTheme` | `~/.config/bat/themes/hotline-pink.tmTheme` |
 
-## Activate
+## Switch it on
+
+Your turn: the installer never edits your own configs.
+
+1. Rebuild bat's theme cache:
+
+   ```bash
+   bat cache --build
+   ```
+
+2. Add this line to `~/.config/bat/config`:
+
+   ```
+   --theme="hotline-pink"
+   ```
+
+
+## Uninstall
 
 ```bash
-bat cache --build
+./install.py --uninstall bat
 ```
 
-Then add `--theme="hotline-pink"` to `~/.config/bat/config`.
+1. Remove `--theme="hotline-pink"` from `~/.config/bat/config`, then run `bat cache --build`.
 
 Status: Loaded in the app.

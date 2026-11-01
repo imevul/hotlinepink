@@ -12,9 +12,20 @@ Colour scheme for Konsole.
 |---|---|
 | `HotlinePink.colorscheme` | `~/.local/share/konsole/HotlinePink.colorscheme` |
 
-## Activate
+## Switch it on
 
-Settings > Edit Current Profile > Appearance, then pick Hotline Pink.
+Your turn: the installer never edits your own configs.
+
+1. In Konsole, open Settings > Edit Current Profile > Appearance.
+2. Select Hotline Pink, then click OK.
+
+## Uninstall
+
+```bash
+./install.py --uninstall konsole
+```
+
+1. In Konsole, pick another colour scheme under Settings > Edit Current Profile > Appearance.
 
 ## Notes
 

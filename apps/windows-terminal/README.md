@@ -4,10 +4,23 @@ Colour scheme for Windows Terminal.
 
 ## Install
 
-This one is applied by hand, see Activate below.
+The installer doesn't copy anything for this app, so follow the steps below.
 
-## Activate
+## Switch it on
 
-Open Settings > Open JSON file and add the contents of `hotline-pink.json` to the `schemes` array. Then set `"colorScheme": "Hotline Pink"` under `profiles.defaults`.
+Your turn: the installer never edits your own configs.
+
+1. On Windows, open Terminal's Settings, then Open JSON file.
+2. Add the contents of `hotline-pink.json` as a new entry in the `schemes` array.
+3. Add this under `profiles.defaults`:
+
+   ```json
+   "colorScheme": "Hotline Pink"
+   ```
+
+
+## Uninstall
+
+1. Remove the Hotline Pink entry from `schemes` and the `colorScheme` line from `profiles.defaults`.
 
 Status: Syntax checked only.

@@ -21,6 +21,7 @@ README = ROOT / "README.md"
 TABLE_START = "<!-- apps:start -->"
 TABLE_END = "<!-- apps:end -->"
 PLACEHOLDER = re.compile(r"\{\{([a-z0-9-]+)(?:\.([a-z]+))?\}\}")
+FILE_REF = re.compile(r"\{file:([^}]+)\}")
 HEX = re.compile(r"#[0-9A-Fa-f]{6}(?:[0-9A-Fa-f]{2})?\b")
 MIN_CONTRAST = 4.5
 # ANSI black is a surface colour, not a text colour.
@@ -61,11 +62,25 @@ def render(text, tokens, source):
     return PLACEHOLDER.sub(replace, text)
 
 
+def readme_steps(steps):
+    lines = []
+    for number, step in enumerate(steps, 1):
+        text = FILE_REF.sub(lambda match: match.group(1), step["do"])
+        lines.append(f"{number}. {text}")
+        if "code" in step:
+            lines += ["", f"   ```{step.get('lang', '')}"]
+            lines += [f"   {line}" for line in step["code"].splitlines()]
+            lines += ["   ```", ""]
+    return lines + [""]
+
+
 def app_readme(app_id, app):
+    if ("steps" in app) == ("active" in app):
+        raise ValueError(f"{app_id}: set exactly one of steps and active")
     lines = [f"# {app['name']}", "", app["summary"], ""]
     lines += ["## Install", ""]
     if app.get("manual"):
-        lines += ["This one is applied by hand, see Activate below.", ""]
+        lines += ["The installer doesn't copy anything for this app, so follow the steps below.", ""]
     else:
         lines += ["```bash", f"./install.py {app_id}", "```", ""]
         lines += ["| File | Installed to |", "|---|---|"]
@@ -73,7 +88,16 @@ def app_readme(app_id, app):
             for dest in item["dest"]:
                 lines.append(f"| `{item['src']}` | `{dest}` |")
         lines.append("")
-    lines += ["## Activate", "", app["activate"].strip(), ""]
+    if "active" in app:
+        lines += ["## Switch it on", "", f"Nothing more to do. {app['active']}", ""]
+    else:
+        lines += ["## Switch it on", "", "Your turn: the installer never edits your own configs.", ""]
+        lines += readme_steps(app["steps"])
+    lines += ["## Uninstall", ""]
+    if not app.get("manual"):
+        lines += ["```bash", f"./install.py --uninstall {app_id}", "```", ""]
+    if "undo" in app:
+        lines += readme_steps({"do": text} for text in app["undo"])
     if app.get("notes"):
         lines += ["## Notes", "", app["notes"].strip(), ""]
     lines += [f"Status: {STATUS_LABELS[app['status']]}.", ""]
@@ -135,6 +159,11 @@ def check(outputs, palette, tokens, apps):
             ratio = contrast(tokens[role], tokens["bg"])
             if ratio < MIN_CONTRAST:
                 problems.append(f"low contrast: {role} {tokens[role]} is {ratio:.2f}:1 on bg")
+
+    # Despite the _color suffix, these Tide variables hold the separator glyphs.
+    tide = outputs.get(Path("fish") / "tide-colors.fish", "")
+    for name in re.findall(r"tide_(?:left|right)_prompt_separator_\w+", tide):
+        problems.append(f"glyph variable set to a colour: {name} in apps/fish/tide-colors.fish")
 
     allowed = {value.upper() for value in tokens.values()}
     for rel, content in outputs.items():

@@ -12,8 +12,14 @@ Theme for eza.
 |---|---|
 | `theme.yml` | `~/.config/eza/theme.yml` |
 
-## Activate
+## Switch it on
 
-Nothing to do, eza reads this file automatically. An `LS_COLORS` or `EZA_COLORS` variable can still override it.
+Nothing more to do. eza reads this file automatically. An `LS_COLORS` or `EZA_COLORS` variable can still override it.
+
+## Uninstall
+
+```bash
+./install.py --uninstall eza
+```
 
 Status: Loaded in the app.

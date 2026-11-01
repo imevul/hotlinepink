@@ -12,8 +12,19 @@ Theme for btop.
 |---|---|
 | `hotline-pink.theme` | `~/.config/btop/themes/hotline-pink.theme` |
 
-## Activate
+## Switch it on
 
-Press Esc in btop, open Options, and set Color theme to hotline-pink.
+Your turn: the installer never edits your own configs.
+
+1. In btop, press Esc and open Options.
+2. Set Color theme to hotline-pink.
+
+## Uninstall
+
+```bash
+./install.py --uninstall btop
+```
+
+1. In btop's Options, set Color theme to another theme.
 
 Status: Syntax checked only.

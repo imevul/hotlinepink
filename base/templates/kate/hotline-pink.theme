@@ -4,6 +4,19 @@
     "revision": 1,
     "license": "SPDX-License-Identifier: MIT"
   },
+  "custom-styles": {
+    "Markdown": {
+      "Header H1": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Header H2": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Header H3": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Header H4": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Header H5": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Header H6": { "text-color": "{{primary}}", "selected-text-color": "{{selection-fg}}", "bold": true },
+      "Inline Image": { "text-color": "{{highlight}}", "selected-text-color": "{{selection-fg}}" },
+      "Reference Image": { "text-color": "{{highlight}}", "selected-text-color": "{{selection-fg}}" },
+      "Inline Image: Link": { "text-color": "{{highlight}}", "selected-text-color": "{{selection-fg}}" }
+    }
+  },
   "editor-colors": {
     "BackgroundColor": "{{bg}}",
     "BracketMatching": "{{border}}",

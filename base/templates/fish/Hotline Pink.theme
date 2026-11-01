@@ -7,7 +7,7 @@ fish_color_autosuggestion {{index.bare}}
 fish_color_cancel -r
 fish_color_command {{primary.bare}}
 fish_color_comment {{index.bare}}
-fish_color_cwd {{highlight.bare}}
+fish_color_cwd {{primary.bare}}
 fish_color_cwd_root {{error.bare}}
 fish_color_end {{muted.bare}}
 fish_color_error {{error.bare}}
