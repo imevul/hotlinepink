@@ -1,0 +1,42 @@
+color-link default "{{text}},{{bg}}"
+color-link comment "{{syntax-comment}}"
+
+color-link identifier "{{syntax-function}}"
+color-link identifier.class "{{syntax-type}}"
+color-link identifier.var "{{syntax-variable}}"
+
+color-link constant "{{syntax-number}}"
+color-link constant.number "{{syntax-number}}"
+color-link constant.string "{{syntax-string}}"
+
+color-link symbol "{{muted}}"
+color-link symbol.brackets "{{muted}}"
+color-link symbol.tag "{{syntax-keyword}}"
+
+color-link type "{{syntax-type}}"
+color-link type.keyword "{{syntax-keyword}}"
+
+color-link special "{{highlight}}"
+color-link statement "{{syntax-keyword}}"
+color-link preproc "{{highlight}}"
+
+color-link underlined "{{highlight}}"
+color-link error "bold {{error}}"
+color-link todo "bold {{warning}}"
+
+color-link diff-added "{{success}}"
+color-link diff-modified "{{warning}}"
+color-link diff-deleted "{{error}}"
+
+color-link gutter-error "{{error}}"
+color-link gutter-warning "{{warning}}"
+
+color-link statusline "{{text}},{{raised}}"
+color-link tabbar "{{muted}},{{surface}}"
+color-link indent-char "{{border}}"
+color-link line-number "{{index}}"
+color-link current-line-number "{{primary}}"
+
+color-link cursor-line "{{raised}}"
+color-link color-column "{{raised}}"
+color-link type.extended "default"

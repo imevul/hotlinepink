@@ -1,0 +1,33 @@
+# name: Hotline Pink
+
+[dark]
+# preferred_background: 09090B
+fish_color_normal FFF4FA
+fish_color_autosuggestion 8E7985
+fish_color_cancel -r
+fish_color_command FF1493
+fish_color_comment 8E7985
+fish_color_cwd FF5CB8
+fish_color_cwd_root EF4444
+fish_color_end B8AAB2
+fish_color_error EF4444
+fish_color_escape 2DE2E6
+fish_color_history_current --bold
+fish_color_host B8AAB2
+fish_color_host_remote 2DE2E6
+fish_color_keyword FF1493
+fish_color_operator FF5CB8
+fish_color_option B8AAB2
+fish_color_param FFF4FA
+fish_color_quote 4ADE80
+fish_color_redirection FF5CB8
+fish_color_search_match --background=49313E
+fish_color_selection --background=49313E
+fish_color_status EF4444
+fish_color_user B8AAB2
+fish_color_valid_path --underline
+fish_pager_color_completion FFF4FA
+fish_pager_color_description B8AAB2
+fish_pager_color_prefix FF1493 --bold
+fish_pager_color_progress 09090B --background=FF1493
+fish_pager_color_selected_background --background=49313E

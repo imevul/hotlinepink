@@ -1,0 +1,23 @@
+# Hotline Pink for Ghostty
+background = #09090B
+foreground = #FFF4FA
+cursor-color = #FF1493
+cursor-text = #09090B
+selection-background = #49313E
+selection-foreground = #FFF4FA
+palette = 0=#1C191C
+palette = 1=#EF4444
+palette = 2=#22C55E
+palette = 3=#F59E0B
+palette = 4=#6E8BFF
+palette = 5=#FF1493
+palette = 6=#2DE2E6
+palette = 7=#B8AAB2
+palette = 8=#8E7985
+palette = 9=#FF7A7A
+palette = 10=#4ADE80
+palette = 11=#FBBF24
+palette = 12=#A0B2FF
+palette = 13=#FF5CB8
+palette = 14=#8AF3F5
+palette = 15=#FFF4FA

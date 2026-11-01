@@ -1,0 +1,112 @@
+<scheme name="Hotline Pink" version="142" parent_scheme="Darcula">
+  <colors>
+    <option name="CARET_COLOR" value="{{cursor.bare}}" />
+    <option name="CARET_ROW_COLOR" value="{{surface.bare}}" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{bg.bare}}" />
+    <option name="GUTTER_BACKGROUND" value="{{bg.bare}}" />
+    <option name="INDENT_GUIDE" value="{{border-soft.bare}}" />
+    <option name="LINE_NUMBERS_COLOR" value="{{index.bare}}" />
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{primary.bare}}" />
+    <option name="SELECTION_BACKGROUND" value="{{selection-bg.bare}}" />
+    <option name="SELECTION_FOREGROUND" value="{{selection-fg.bare}}" />
+    <option name="TEARLINE_COLOR" value="{{border.bare}}" />
+    <option name="ADDED_LINES_COLOR" value="{{success.bare}}" />
+    <option name="MODIFIED_LINES_COLOR" value="{{warning.bare}}" />
+    <option name="DELETED_LINES_COLOR" value="{{error.bare}}" />
+  </colors>
+  <attributes>
+    <option name="TEXT">
+      <value>
+        <option name="FOREGROUND" value="{{text.bare}}" />
+        <option name="BACKGROUND" value="{{bg.bare}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_KEYWORD">
+      <value><option name="FOREGROUND" value="{{syntax-keyword.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_FUNCTION_DECLARATION">
+      <value><option name="FOREGROUND" value="{{syntax-function.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_FUNCTION_CALL">
+      <value><option name="FOREGROUND" value="{{syntax-function.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_CLASS_NAME">
+      <value><option name="FOREGROUND" value="{{syntax-type.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_CLASS_REFERENCE">
+      <value><option name="FOREGROUND" value="{{syntax-type.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_INTERFACE_NAME">
+      <value><option name="FOREGROUND" value="{{syntax-type.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_STRING">
+      <value><option name="FOREGROUND" value="{{syntax-string.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_NUMBER">
+      <value><option name="FOREGROUND" value="{{syntax-number.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_CONSTANT">
+      <value><option name="FOREGROUND" value="{{syntax-number.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_LINE_COMMENT">
+      <value><option name="FOREGROUND" value="{{syntax-comment.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_BLOCK_COMMENT">
+      <value><option name="FOREGROUND" value="{{syntax-comment.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_DOC_COMMENT">
+      <value><option name="FOREGROUND" value="{{syntax-comment.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_LOCAL_VARIABLE">
+      <value><option name="FOREGROUND" value="{{syntax-variable.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_PARAMETER">
+      <value><option name="FOREGROUND" value="{{syntax-variable.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_OPERATION_SIGN">
+      <value><option name="FOREGROUND" value="{{muted.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_COMMA">
+      <value><option name="FOREGROUND" value="{{muted.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_SEMICOLON">
+      <value><option name="FOREGROUND" value="{{muted.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_TAG">
+      <value><option name="FOREGROUND" value="{{syntax-keyword.bare}}" /></value>
+    </option>
+    <option name="DEFAULT_ATTRIBUTE">
+      <value><option name="FOREGROUND" value="{{syntax-function.bare}}" /></value>
+    </option>
+    <option name="ERRORS_ATTRIBUTES">
+      <value><option name="EFFECT_COLOR" value="{{error.bare}}" /><option name="EFFECT_TYPE" value="2" /></value>
+    </option>
+    <option name="WARNING_ATTRIBUTES">
+      <value><option name="EFFECT_COLOR" value="{{warning.bare}}" /><option name="EFFECT_TYPE" value="2" /></value>
+    </option>
+    <option name="CONSOLE_BLACK_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-black.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_RED_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-red.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_GREEN_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-green.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_YELLOW_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-yellow.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_BLUE_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-blue.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_MAGENTA_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-magenta.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_CYAN_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-cyan.bare}}" /></value>
+    </option>
+    <option name="CONSOLE_GRAY_OUTPUT">
+      <value><option name="FOREGROUND" value="{{ansi-white.bare}}" /></value>
+    </option>
+  </attributes>
+</scheme>

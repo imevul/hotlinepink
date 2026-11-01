@@ -1,0 +1,23 @@
+# Hotline Pink for herdr. Replace the [theme] table in config.toml with this.
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[theme.custom]
+panel_bg = "#09090B"
+sidebar_bg = "#121214"
+active_row_bg = "#1C191C"
+selection_bg = "#49313E"
+surface_dim = "#121214"
+surface0 = "#121214"
+surface1 = "#1C191C"
+overlay0 = "#49313E"
+overlay1 = "#8E7985"
+subtext0 = "#B8AAB2"
+text = "#FFF4FA"
+accent = "#FF1493"
+mauve = "#FF5CB8"
+green = "#22C55E"
+yellow = "#F59E0B"
+red = "#EF4444"
+peach = "#F59E0B"

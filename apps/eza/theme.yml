@@ -1,0 +1,59 @@
+# Hotline Pink for eza
+filekinds:
+  normal: {foreground: "#FFF4FA"}
+  directory: {foreground: "#FF5CB8", is_bold: true}
+  symlink: {foreground: "#2DE2E6"}
+  pipe: {foreground: "#F59E0B"}
+  block_device: {foreground: "#F59E0B"}
+  char_device: {foreground: "#F59E0B"}
+  socket: {foreground: "#F59E0B"}
+  special: {foreground: "#F59E0B"}
+  executable: {foreground: "#22C55E", is_bold: true}
+  mount_point: {foreground: "#FF1493", is_bold: true}
+perms:
+  user_read: {foreground: "#FFF4FA"}
+  user_write: {foreground: "#FF5CB8"}
+  user_execute_file: {foreground: "#22C55E"}
+  user_execute_other: {foreground: "#22C55E"}
+  group_read: {foreground: "#B8AAB2"}
+  group_write: {foreground: "#B8AAB2"}
+  group_execute: {foreground: "#B8AAB2"}
+  other_read: {foreground: "#8E7985"}
+  other_write: {foreground: "#F59E0B"}
+  other_execute: {foreground: "#8E7985"}
+  special_user_file: {foreground: "#FF1493"}
+  special_other: {foreground: "#FF1493"}
+  attribute: {foreground: "#8E7985"}
+size:
+  major: {foreground: "#B8AAB2"}
+  minor: {foreground: "#8E7985"}
+  number_byte: {foreground: "#B8AAB2"}
+  number_kilo: {foreground: "#B8AAB2"}
+  number_mega: {foreground: "#FF5CB8"}
+  number_giga: {foreground: "#FF1493"}
+  number_huge: {foreground: "#FF1493", is_bold: true}
+  unit_byte: {foreground: "#8E7985"}
+  unit_kilo: {foreground: "#8E7985"}
+  unit_mega: {foreground: "#8E7985"}
+  unit_giga: {foreground: "#8E7985"}
+  unit_huge: {foreground: "#8E7985"}
+users:
+  user_you: {foreground: "#FFF4FA"}
+  user_root: {foreground: "#EF4444"}
+  user_other: {foreground: "#B8AAB2"}
+  group_yours: {foreground: "#B8AAB2"}
+  group_other: {foreground: "#8E7985"}
+  group_root: {foreground: "#EF4444"}
+links:
+  normal: {foreground: "#2DE2E6"}
+  multi_link_file: {foreground: "#F59E0B"}
+git:
+  new: {foreground: "#22C55E"}
+  modified: {foreground: "#F59E0B"}
+  deleted: {foreground: "#EF4444"}
+  renamed: {foreground: "#2DE2E6"}
+  typechange: {foreground: "#2DE2E6"}
+  ignored: {foreground: "#8E7985"}
+  conflicted: {foreground: "#EF4444"}
+punctuation: {foreground: "#49313E"}
+date: {foreground: "#B8AAB2"}

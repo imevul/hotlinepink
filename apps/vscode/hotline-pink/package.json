@@ -1,0 +1,20 @@
+{
+  "name": "hotline-pink",
+  "displayName": "Hotline Pink",
+  "description": "Charcoal surfaces with hot pink and a touch of cyan.",
+  "version": "1.0.0",
+  "publisher": "imevul",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/imevul/hotlinepink" },
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Hotline Pink",
+        "uiTheme": "vs-dark",
+        "path": "./themes/hotline-pink-color-theme.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+# Hotline Pink for Alacritty
+[colors.primary]
+background = "#09090B"
+foreground = "#FFF4FA"
+
+[colors.cursor]
+text = "#09090B"
+cursor = "#FF1493"
+
+[colors.selection]
+text = "#FFF4FA"
+background = "#49313E"
+
+[colors.normal]
+black = "#1C191C"
+red = "#EF4444"
+green = "#22C55E"
+yellow = "#F59E0B"
+blue = "#6E8BFF"
+magenta = "#FF1493"
+cyan = "#2DE2E6"
+white = "#B8AAB2"
+
+[colors.bright]
+black = "#8E7985"
+red = "#FF7A7A"
+green = "#4ADE80"
+yellow = "#FBBF24"
+blue = "#A0B2FF"
+magenta = "#FF5CB8"
+cyan = "#8AF3F5"
+white = "#FFF4FA"

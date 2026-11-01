@@ -1,0 +1,59 @@
+# Hotline Pink for eza
+filekinds:
+  normal: {foreground: "{{text}}"}
+  directory: {foreground: "{{highlight}}", is_bold: true}
+  symlink: {foreground: "{{cyan}}"}
+  pipe: {foreground: "{{warning}}"}
+  block_device: {foreground: "{{warning}}"}
+  char_device: {foreground: "{{warning}}"}
+  socket: {foreground: "{{warning}}"}
+  special: {foreground: "{{warning}}"}
+  executable: {foreground: "{{success}}", is_bold: true}
+  mount_point: {foreground: "{{primary}}", is_bold: true}
+perms:
+  user_read: {foreground: "{{text}}"}
+  user_write: {foreground: "{{highlight}}"}
+  user_execute_file: {foreground: "{{success}}"}
+  user_execute_other: {foreground: "{{success}}"}
+  group_read: {foreground: "{{muted}}"}
+  group_write: {foreground: "{{muted}}"}
+  group_execute: {foreground: "{{muted}}"}
+  other_read: {foreground: "{{index}}"}
+  other_write: {foreground: "{{warning}}"}
+  other_execute: {foreground: "{{index}}"}
+  special_user_file: {foreground: "{{primary}}"}
+  special_other: {foreground: "{{primary}}"}
+  attribute: {foreground: "{{index}}"}
+size:
+  major: {foreground: "{{muted}}"}
+  minor: {foreground: "{{index}}"}
+  number_byte: {foreground: "{{muted}}"}
+  number_kilo: {foreground: "{{muted}}"}
+  number_mega: {foreground: "{{highlight}}"}
+  number_giga: {foreground: "{{primary}}"}
+  number_huge: {foreground: "{{primary}}", is_bold: true}
+  unit_byte: {foreground: "{{index}}"}
+  unit_kilo: {foreground: "{{index}}"}
+  unit_mega: {foreground: "{{index}}"}
+  unit_giga: {foreground: "{{index}}"}
+  unit_huge: {foreground: "{{index}}"}
+users:
+  user_you: {foreground: "{{text}}"}
+  user_root: {foreground: "{{error}}"}
+  user_other: {foreground: "{{muted}}"}
+  group_yours: {foreground: "{{muted}}"}
+  group_other: {foreground: "{{index}}"}
+  group_root: {foreground: "{{error}}"}
+links:
+  normal: {foreground: "{{cyan}}"}
+  multi_link_file: {foreground: "{{warning}}"}
+git:
+  new: {foreground: "{{success}}"}
+  modified: {foreground: "{{warning}}"}
+  deleted: {foreground: "{{error}}"}
+  renamed: {foreground: "{{cyan}}"}
+  typechange: {foreground: "{{cyan}}"}
+  ignored: {foreground: "{{index}}"}
+  conflicted: {foreground: "{{error}}"}
+punctuation: {foreground: "{{border}}"}
+date: {foreground: "{{muted}}"}

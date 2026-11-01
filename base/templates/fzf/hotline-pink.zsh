@@ -1,0 +1,2 @@
+# Hotline Pink for fzf. Source this from .zshrc.
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=bg:{{bg}},bg+:{{raised}},fg:{{text}},fg+:{{text}},hl:{{primary}},hl+:{{highlight}},border:{{border}},gutter:{{bg}},header:{{muted}},info:{{muted}},label:{{primary}},marker:{{cyan}},pointer:{{primary}},prompt:{{primary}},query:{{text}},spinner:{{primary}},separator:{{border}},scrollbar:{{border}}"

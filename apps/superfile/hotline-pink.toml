@@ -1,0 +1,47 @@
+# Hotline Pink for superfile
+code_syntax_highlight = "dracula"
+
+full_screen_fg = "#FFF4FA"
+full_screen_bg = "#09090B"
+
+gradient_color = ["#FF1493", "#FF5CB8"]
+
+file_panel_fg = "#FFF4FA"
+file_panel_bg = "#09090B"
+file_panel_border = "#49313E"
+file_panel_border_active = "#FF1493"
+file_panel_top_directory_icon = "#FF1493"
+file_panel_top_path = "#FF5CB8"
+file_panel_item_selected_fg = "#FF1493"
+file_panel_item_selected_bg = "#09090B"
+
+footer_fg = "#B8AAB2"
+footer_bg = "#09090B"
+footer_border = "#49313E"
+footer_border_active = "#FF1493"
+
+sidebar_fg = "#B8AAB2"
+sidebar_bg = "#09090B"
+sidebar_title = "#FF1493"
+sidebar_border = "#09090B"
+sidebar_border_active = "#FF1493"
+sidebar_item_selected_fg = "#FF1493"
+sidebar_item_selected_bg = "#09090B"
+sidebar_divider = "#49313E"
+
+modal_fg = "#FFF4FA"
+modal_bg = "#1C191C"
+modal_border_active = "#FF1493"
+modal_cancel_fg = "#FFF4FA"
+modal_cancel_bg = "#49313E"
+modal_confirm_fg = "#09090B"
+modal_confirm_bg = "#FF1493"
+
+help_menu_hotkey = "#FF1493"
+help_menu_title = "#FF5CB8"
+
+cursor = "#FF1493"
+correct = "#22C55E"
+error = "#EF4444"
+hint = "#2DE2E6"
+cancel = "#F59E0B"

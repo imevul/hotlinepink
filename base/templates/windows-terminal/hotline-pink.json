@@ -1,0 +1,23 @@
+{
+  "name": "Hotline Pink",
+  "background": "{{bg}}",
+  "foreground": "{{text}}",
+  "cursorColor": "{{cursor}}",
+  "selectionBackground": "{{selection-bg}}",
+  "black": "{{ansi-black}}",
+  "red": "{{ansi-red}}",
+  "green": "{{ansi-green}}",
+  "yellow": "{{ansi-yellow}}",
+  "blue": "{{ansi-blue}}",
+  "purple": "{{ansi-magenta}}",
+  "cyan": "{{ansi-cyan}}",
+  "white": "{{ansi-white}}",
+  "brightBlack": "{{ansi-bright-black}}",
+  "brightRed": "{{ansi-bright-red}}",
+  "brightGreen": "{{ansi-bright-green}}",
+  "brightYellow": "{{ansi-bright-yellow}}",
+  "brightBlue": "{{ansi-bright-blue}}",
+  "brightPurple": "{{ansi-bright-magenta}}",
+  "brightCyan": "{{ansi-bright-cyan}}",
+  "brightWhite": "{{ansi-bright-white}}"
+}

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="titleGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#FF1493"/>
+      <stop offset="0.55" stop-color="#FF00A8"/>
+      <stop offset="1" stop-color="#2DE2E6"/>
+    </linearGradient>
+    <radialGradient id="ambientPink" cx="0.88" cy="0.08" r="0.7">
+      <stop offset="0" stop-color="#FF1493" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#09090B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <style>
+      .sans { font-family: 'DejaVu Sans', sans-serif; }
+      .mono { font-family: 'DejaVu Sans Mono', monospace; }
+      .label { font: 600 21px 'DejaVu Sans', sans-serif; fill: #FFF4FA; }
+      .hex { font: 17px 'DejaVu Sans Mono', monospace; fill: #B8AAB2; letter-spacing: 0.5px; }
+      .section { font: 700 16px 'DejaVu Sans', sans-serif; fill: #FF5CB8; letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#09090B"/>
+  <rect width="1600" height="1000" fill="url(#ambientPink)"/>
+  <path d="M0 860 L480 380 L720 620 L1030 310 L1600 880" fill="none" stroke="#FF1493" stroke-opacity="0.035" stroke-width="2"/>
+  <path d="M0 920 L520 400 L770 650 L1080 340 L1600 860" fill="none" stroke="#2DE2E6" stroke-opacity="0.035" stroke-width="2"/>
+
+  <g transform="translate(92 76)">
+    <rect x="0" y="0" width="8" height="108" rx="4" fill="url(#titleGlow)" filter="url(#glow)"/>
+    <text x="38" y="51" class="sans" font-size="62" font-weight="800" fill="#FFF4FA" letter-spacing="-2">HOTLINE PINK</text>
+    <text x="40" y="92" class="mono" font-size="19" fill="#B8AAB2" letter-spacing="2">DARK SYNTHWAVE SYSTEM • OPENCODE / HERMES / HERDR</text>
+  </g>
+
+  <g transform="translate(92 230)">
+    <text x="0" y="0" class="section">FOUNDATION</text>
+    <g transform="translate(0 25)" filter="url(#softShadow)">
+      <rect width="444" height="206" rx="20" fill="#121214" stroke="#49313E"/>
+      <rect x="18" y="18" width="408" height="112" rx="13" fill="#09090B"/>
+      <text x="28" y="166" class="label">Background</text><text x="278" y="166" class="hex">#09090B</text>
+      <rect x="28" y="181" width="270" height="5" rx="2.5" fill="#09090B" stroke="#49313E"/>
+    </g>
+    <g transform="translate(466 25)" filter="url(#softShadow)">
+      <rect width="444" height="206" rx="20" fill="#121214" stroke="#49313E"/>
+      <rect x="18" y="18" width="408" height="112" rx="13" fill="#121214" stroke="#282329"/>
+      <text x="28" y="166" class="label">Surface</text><text x="278" y="166" class="hex">#121214</text>
+      <rect x="28" y="181" width="270" height="5" rx="2.5" fill="#121214" stroke="#49313E"/>
+    </g>
+    <g transform="translate(932 25)" filter="url(#softShadow)">
+      <rect width="444" height="206" rx="20" fill="#121214" stroke="#49313E"/>
+      <rect x="18" y="18" width="408" height="112" rx="13" fill="#1C191C"/>
+      <text x="28" y="166" class="label">Raised surface</text><text x="278" y="166" class="hex">#1C191C</text>
+      <rect x="28" y="181" width="270" height="5" rx="2.5" fill="#1C191C" stroke="#49313E"/>
+    </g>
+  </g>
+
+  <g transform="translate(92 505)">
+    <text x="0" y="0" class="section">BRAND &amp; CONTRAST</text>
+    <g transform="translate(0 25)">
+      <rect width="260" height="166" rx="18" fill="#FF1493"/>
+      <text x="22" y="112" class="sans" font-size="20" font-weight="700" fill="#09090B">Primary</text>
+      <text x="22" y="141" class="mono" font-size="17" fill="#09090B">#FF1493</text>
+    </g>
+    <g transform="translate(279 25)">
+      <rect width="260" height="166" rx="18" fill="#FF5CB8"/>
+      <text x="22" y="112" class="sans" font-size="20" font-weight="700" fill="#09090B">Highlight</text>
+      <text x="22" y="141" class="mono" font-size="17" fill="#09090B">#FF5CB8</text>
+    </g>
+    <g transform="translate(558 25)">
+      <rect width="260" height="166" rx="18" fill="#FF00A8"/>
+      <text x="22" y="112" class="sans" font-size="20" font-weight="700" fill="#09090B">Magenta</text>
+      <text x="22" y="141" class="mono" font-size="17" fill="#09090B">#FF00A8</text>
+    </g>
+    <g transform="translate(837 25)">
+      <rect width="260" height="166" rx="18" fill="#C6006F"/>
+      <text x="22" y="112" class="sans" font-size="20" font-weight="700" fill="#FFF4FA">Deep pink</text>
+      <text x="22" y="141" class="mono" font-size="17" fill="#FFF4FA">#C6006F</text>
+    </g>
+    <g transform="translate(1116 25)">
+      <rect width="260" height="166" rx="18" fill="#2DE2E6"/>
+      <text x="22" y="112" class="sans" font-size="20" font-weight="700" fill="#09090B">Cyan</text>
+      <text x="22" y="141" class="mono" font-size="17" fill="#09090B">#2DE2E6</text>
+    </g>
+  </g>
+
+  <g transform="translate(92 745)">
+    <text x="0" y="0" class="section">TEXT &amp; STRUCTURE</text>
+    <g transform="translate(0 24)"><rect width="192" height="92" rx="15" fill="#FFF4FA"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#09090B">Text</text><text x="18" y="68" class="mono" font-size="15" fill="#09090B">#FFF4FA</text></g>
+    <g transform="translate(210 24)"><rect width="192" height="92" rx="15" fill="#B8AAB2"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#09090B">Muted</text><text x="18" y="68" class="mono" font-size="15" fill="#09090B">#B8AAB2</text></g>
+    <g transform="translate(420 24)"><rect width="192" height="92" rx="15" fill="#49313E"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#FFF4FA">Border</text><text x="18" y="68" class="mono" font-size="15" fill="#FFF4FA">#49313E</text></g>
+
+    <text x="676" y="0" class="section">SEMANTIC STATUS</text>
+    <g transform="translate(676 24)"><rect width="212" height="92" rx="15" fill="#22C55E"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#09090B">Success</text><text x="18" y="68" class="mono" font-size="15" fill="#09090B">#22C55E</text></g>
+    <g transform="translate(906 24)"><rect width="212" height="92" rx="15" fill="#F59E0B"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#09090B">Warning</text><text x="18" y="68" class="mono" font-size="15" fill="#09090B">#F59E0B</text></g>
+    <g transform="translate(1136 24)"><rect width="240" height="92" rx="15" fill="#EF4444"/><text x="18" y="40" class="sans" font-size="17" font-weight="700" fill="#FFF4FA">Error</text><text x="18" y="68" class="mono" font-size="15" fill="#FFF4FA">#EF4444</text></g>
+  </g>
+
+  <g transform="translate(92 921)">
+    <rect width="1376" height="1" fill="#49313E"/>
+    <text x="0" y="39" class="mono" font-size="16" fill="#B8AAB2">BALANCE</text>
+    <rect x="110" y="24" width="840" height="18" rx="9" fill="#09090B" stroke="#49313E"/>
+    <rect x="110" y="24" width="672" height="18" rx="9" fill="#1C191C"/>
+    <rect x="782" y="24" width="143" height="18" fill="#FF1493"/>
+    <rect x="925" y="24" width="25" height="18" rx="0 9 9 0" fill="#2DE2E6"/>
+    <text x="976" y="40" class="mono" font-size="15" fill="#FFF4FA">80% charcoal</text>
+    <text x="1120" y="40" class="mono" font-size="15" fill="#FF5CB8">17% pink</text>
+    <text x="1240" y="40" class="mono" font-size="15" fill="#2DE2E6">3% cyan</text>
+  </g>
+</svg>

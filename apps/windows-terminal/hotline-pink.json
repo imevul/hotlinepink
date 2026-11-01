@@ -1,0 +1,23 @@
+{
+  "name": "Hotline Pink",
+  "background": "#09090B",
+  "foreground": "#FFF4FA",
+  "cursorColor": "#FF1493",
+  "selectionBackground": "#49313E",
+  "black": "#1C191C",
+  "red": "#EF4444",
+  "green": "#22C55E",
+  "yellow": "#F59E0B",
+  "blue": "#6E8BFF",
+  "purple": "#FF1493",
+  "cyan": "#2DE2E6",
+  "white": "#B8AAB2",
+  "brightBlack": "#8E7985",
+  "brightRed": "#FF7A7A",
+  "brightGreen": "#4ADE80",
+  "brightYellow": "#FBBF24",
+  "brightBlue": "#A0B2FF",
+  "brightPurple": "#FF5CB8",
+  "brightCyan": "#8AF3F5",
+  "brightWhite": "#FFF4FA"
+}

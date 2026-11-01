@@ -1,0 +1,20 @@
+# Hotline Pink for delta. Needs the bat theme for syntax colours.
+[delta "hotline-pink"]
+	dark = true
+	syntax-theme = hotline-pink
+	file-style = "{{primary}}" bold
+	file-decoration-style = "{{border}}" ul
+	hunk-header-style = file line-number syntax
+	hunk-header-decoration-style = "{{border}}" box
+	hunk-header-line-number-style = "{{highlight}}"
+	minus-style = syntax "{{diff-del-bg}}"
+	minus-emph-style = "{{text}}" "{{ansi-red}}"
+	plus-style = syntax "{{diff-add-bg}}"
+	plus-emph-style = "{{bg}}" "{{ansi-green}}"
+	line-numbers-minus-style = "{{error}}"
+	line-numbers-plus-style = "{{success}}"
+	line-numbers-zero-style = "{{index}}"
+	line-numbers-left-style = "{{border}}"
+	line-numbers-right-style = "{{border}}"
+	commit-style = "{{warning}}"
+	commit-decoration-style = "{{border}}" box
